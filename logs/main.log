@@ -1,0 +1,426 @@
+2023-12-28 15:29:19,396 DEBUG urllib3.connectionpool Starting new HTTPS connection (1): platform.ironsrc.com:443
+2023-12-28 15:29:20,808 DEBUG urllib3.connectionpool https://platform.ironsrc.com:443 "GET /partners/publisher/auth HTTP/1.1" 200 None
+2023-12-28 15:29:20,811 DEBUG urllib3.connectionpool Starting new HTTPS connection (1): platform.ironsrc.com:443
+2023-12-28 15:29:22,547 DEBUG urllib3.connectionpool https://platform.ironsrc.com:443 "GET /partners/publisher/mediation/applications/v6/stats?startDate=2023-12-01&endDate=2023-12-04&metrics=revenue,impressions,eCPM&breakdown=date,app HTTP/1.1" 200 None
+2023-12-28 15:29:22,557 INFO ironsrc_utils Pulled 4 rows from 2023-12-01 to 2023-12-04
+2023-12-28 15:29:22,557 DEBUG google.cloud.bigquery.opentelemetry_tracing This service is instrumented using OpenTelemetry. OpenTelemetry or one of its components could not be imported; please add compatible versions of opentelemetry-api and opentelemetry-instrumentation packages in order to get BigQuery Tracing data.
+2023-12-28 15:29:22,557 DEBUG urllib3.util.retry Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2023-12-28 15:29:22,583 DEBUG google.auth.transport.requests Making request: POST https://oauth2.googleapis.com/token
+2023-12-28 15:29:22,584 DEBUG urllib3.connectionpool Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2023-12-28 15:29:22,715 DEBUG urllib3.connectionpool https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2023-12-28 15:29:22,722 DEBUG urllib3.connectionpool Starting new HTTPS connection (1): bigquery.googleapis.com:443
+2023-12-28 15:29:23,234 DEBUG urllib3.connectionpool https://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/data-import-409408/datasets/temp_tables/tables/isntance_level?prettyPrint=false HTTP/1.1" 200 None
+2023-12-28 15:29:24,090 DEBUG urllib3.connectionpool https://bigquery.googleapis.com:443 "POST /upload/bigquery/v2/projects/data-import-409408/jobs?uploadType=resumable HTTP/1.1" 200 0
+2023-12-28 15:29:25,446 DEBUG urllib3.connectionpool https://bigquery.googleapis.com:443 "PUT /upload/bigquery/v2/projects/data-import-409408/jobs?uploadType=resumable&upload_id=ABPtcPr_9O9QUenW3WKFFyjwSu2Lc4WsBzJ2ESZ6QvoQTW0Yjomh_ibgvdocWlzaT_gE8Od8OcGXTzWLK72q0o6m25eoVyI21S_3_893UG9FaZmH HTTP/1.1" 200 2114
+2023-12-28 15:29:25,753 DEBUG urllib3.connectionpool https://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/data-import-409408/jobs/05a33b13-9d12-42ac-8d1f-7c409c249c0e?location=US&prettyPrint=false HTTP/1.1" 200 None
+2023-12-28 15:29:25,754 DEBUG google.api_core.retry Retrying due to , sleeping 0.8s ...
+2023-12-28 15:29:26,871 DEBUG urllib3.connectionpool https://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/data-import-409408/jobs/05a33b13-9d12-42ac-8d1f-7c409c249c0e?location=US&prettyPrint=false HTTP/1.1" 200 None
+2023-12-28 15:29:26,872 DEBUG google.api_core.retry Retrying due to , sleeping 0.5s ...
+2023-12-28 15:29:27,644 DEBUG urllib3.connectionpool https://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/data-import-409408/jobs/05a33b13-9d12-42ac-8d1f-7c409c249c0e?location=US&prettyPrint=false HTTP/1.1" 200 None
+2023-12-28 15:29:27,961 DEBUG urllib3.connectionpool https://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/data-import-409408/datasets/temp_tables/tables/isntance_level?prettyPrint=false HTTP/1.1" 200 None
+2023-12-28 15:29:27,962 INFO bigquery_utils Table data-import-409408.temp_tables.isntance_level: Imported 4 rows
+2023-12-28 15:29:28,747 DEBUG urllib3.connectionpool https://bigquery.googleapis.com:443 "POST /upload/bigquery/v2/projects/data-import-409408/jobs?uploadType=resumable HTTP/1.1" 200 0
+2023-12-28 15:29:30,062 DEBUG urllib3.connectionpool https://bigquery.googleapis.com:443 "PUT /upload/bigquery/v2/projects/data-import-409408/jobs?uploadType=resumable&upload_id=ABPtcPrPHzom9Y2N_84DSxdT_Wv7g04m2slg3VntlZ6ZqCgQjc3vm07bXntKOt4wgPplAYjnMGRT9o3T2g6zacWOuV2KJLGuf0_CoCQkrmvrFhVm HTTP/1.1" 200 1809
+2023-12-28 15:29:30,344 DEBUG urllib3.connectionpool https://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/data-import-409408/jobs/d2c01517-9d54-43cb-8244-8695e3792934?location=US&prettyPrint=false HTTP/1.1" 200 None
+2023-12-28 15:29:30,345 DEBUG google.api_core.retry Retrying due to , sleeping 0.8s ...
+2023-12-28 15:29:31,440 DEBUG urllib3.connectionpool https://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/data-import-409408/jobs/d2c01517-9d54-43cb-8244-8695e3792934?location=US&prettyPrint=false HTTP/1.1" 200 None
+2023-12-28 15:29:31,442 DEBUG google.api_core.retry Retrying due to , sleeping 0.9s ...
+2023-12-28 15:29:32,671 DEBUG urllib3.connectionpool https://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/data-import-409408/jobs/d2c01517-9d54-43cb-8244-8695e3792934?location=US&prettyPrint=false HTTP/1.1" 200 None
+2023-12-28 15:29:32,677 DEBUG urllib3.connectionpool Starting new HTTPS connection (1): platform.ironsrc.com:443
+2023-12-28 15:29:33,113 DEBUG urllib3.connectionpool https://platform.ironsrc.com:443 "GET /partners/publisher/auth HTTP/1.1" 200 None
+2023-12-28 15:29:33,119 DEBUG urllib3.connectionpool Starting new HTTPS connection (1): platform.ironsrc.com:443
+2023-12-28 15:29:34,285 DEBUG urllib3.connectionpool https://platform.ironsrc.com:443 "GET /partners/publisher/mediation/applications/v6/stats?startDate=2023-12-01&endDate=2023-12-04&metrics=revenue,impressions,eCPM&breakdown=date,app,adUnit HTTP/1.1" 400 None
+2023-12-28 15:29:34,297 DEBUG bigquery_utils 'data'
+Traceback (most recent call last):
+  File "C:\Users\hungd\Documents\Python Scripts\ironsrc_env\lib\site-packages\pandas\core\indexes\base.py", line 3791, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "index.pyx", line 152, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 181, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'data'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\hungd\Documents\Python Scripts\daily_ironsrc_aggregated\main.py", line 10, in <module>
+    result = get_ironsrc_dataframe(start_date, end_date, report_name)
+  File "C:\Users\hungd\Documents\Python Scripts\daily_ironsrc_aggregated\ironsrc_utils.py", line 63, in get_ironsrc_dataframe
+    result["revenue"] = result["data"].apply(lambda x: list(x)[0]["revenue"])
+  File "C:\Users\hungd\Documents\Python Scripts\ironsrc_env\lib\site-packages\pandas\core\frame.py", line 3893, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "C:\Users\hungd\Documents\Python Scripts\ironsrc_env\lib\site-packages\pandas\core\indexes\base.py", line 3798, in get_loc
+    raise KeyError(key) from err
+KeyError: 'data'
+2023-12-28 15:39:12,847 DEBUG urllib3.connectionpool Starting new HTTPS connection (1): platform.ironsrc.com:443
+2023-12-28 15:39:13,339 DEBUG urllib3.connectionpool https://platform.ironsrc.com:443 "GET /partners/publisher/auth HTTP/1.1" 200 None
+2023-12-28 15:39:13,342 DEBUG urllib3.connectionpool Starting new HTTPS connection (1): platform.ironsrc.com:443
+2023-12-28 15:39:14,803 DEBUG urllib3.connectionpool https://platform.ironsrc.com:443 "GET /partners/publisher/mediation/applications/v6/stats?startDate=2023-12-01&endDate=2023-12-04&metrics=revenue,impressions,eCPM&breakdown=date,app HTTP/1.1" 200 None
+2023-12-28 15:39:14,817 INFO ironsrc_utils Pulled 4 rows from 2023-12-01 to 2023-12-04
+2023-12-28 15:39:14,817 DEBUG google.cloud.bigquery.opentelemetry_tracing This service is instrumented using OpenTelemetry. OpenTelemetry or one of its components could not be imported; please add compatible versions of opentelemetry-api and opentelemetry-instrumentation packages in order to get BigQuery Tracing data.
+2023-12-28 15:39:14,818 DEBUG urllib3.util.retry Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2023-12-28 15:39:14,843 DEBUG google.auth.transport.requests Making request: POST https://oauth2.googleapis.com/token
+2023-12-28 15:39:14,845 DEBUG urllib3.connectionpool Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2023-12-28 15:39:15,041 DEBUG urllib3.connectionpool https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2023-12-28 15:39:15,048 DEBUG urllib3.connectionpool Starting new HTTPS connection (1): bigquery.googleapis.com:443
+2023-12-28 15:39:15,604 DEBUG urllib3.connectionpool https://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/data-import-409408/datasets/temp_tables/tables/isntance_level?prettyPrint=false HTTP/1.1" 200 None
+2023-12-28 15:39:17,622 DEBUG urllib3.connectionpool https://bigquery.googleapis.com:443 "POST /upload/bigquery/v2/projects/data-import-409408/jobs?uploadType=resumable HTTP/1.1" 200 0
+2023-12-28 15:39:20,098 DEBUG urllib3.connectionpool https://bigquery.googleapis.com:443 "PUT /upload/bigquery/v2/projects/data-import-409408/jobs?uploadType=resumable&upload_id=ABPtcPpQLMQyAe2y9yi792qmZI5EMtvRcgxpHChIfkQAHjwV7GEAIFoLf9WKrV6HG5zggwH9aBGAT0Zk3Pgq8NP7pO9mU-wt1TMvHLJAmc0Y222WNw HTTP/1.1" 200 2114
+2023-12-28 15:39:20,414 DEBUG urllib3.connectionpool https://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/data-import-409408/jobs/826465ca-8846-4fd2-9b09-f4d0d097b1ad?location=US&prettyPrint=false HTTP/1.1" 200 None
+2023-12-28 15:39:20,416 DEBUG google.api_core.retry Retrying due to , sleeping 0.0s ...
+2023-12-28 15:39:20,715 DEBUG urllib3.connectionpool https://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/data-import-409408/jobs/826465ca-8846-4fd2-9b09-f4d0d097b1ad?location=US&prettyPrint=false HTTP/1.1" 200 None
+2023-12-28 15:39:20,716 DEBUG google.api_core.retry Retrying due to , sleeping 1.1s ...
+2023-12-28 15:39:22,117 DEBUG urllib3.connectionpool https://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/data-import-409408/jobs/826465ca-8846-4fd2-9b09-f4d0d097b1ad?location=US&prettyPrint=false HTTP/1.1" 200 None
+2023-12-28 15:39:22,484 DEBUG urllib3.connectionpool https://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/data-import-409408/datasets/temp_tables/tables/isntance_level?prettyPrint=false HTTP/1.1" 200 None
+2023-12-28 15:39:22,485 INFO bigquery_utils Table data-import-409408.temp_tables.isntance_level: Imported 4 rows
+2023-12-28 15:39:24,390 DEBUG urllib3.connectionpool https://bigquery.googleapis.com:443 "POST /upload/bigquery/v2/projects/data-import-409408/jobs?uploadType=resumable HTTP/1.1" 200 0
+2023-12-28 15:39:25,798 DEBUG urllib3.connectionpool https://bigquery.googleapis.com:443 "PUT /upload/bigquery/v2/projects/data-import-409408/jobs?uploadType=resumable&upload_id=ABPtcPp7pHyec-7b4S699aOuwE9_Khqrq7AewYWsxgcKhyHoZ9sgdpsc0EsXZxLYtrrN-WtbHeYhXm5i7uqlmwh0UJ1G0as8ULpV3glRmO1ALJeM HTTP/1.1" 200 1809
+2023-12-28 15:39:26,079 DEBUG urllib3.connectionpool https://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/data-import-409408/jobs/bf4195e8-bde1-4dc1-ba04-4939d8e025f5?location=US&prettyPrint=false HTTP/1.1" 200 None
+2023-12-28 15:39:26,082 DEBUG google.api_core.retry Retrying due to , sleeping 0.6s ...
+2023-12-28 15:39:26,958 DEBUG urllib3.connectionpool https://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/data-import-409408/jobs/bf4195e8-bde1-4dc1-ba04-4939d8e025f5?location=US&prettyPrint=false HTTP/1.1" 200 None
+2023-12-28 15:39:26,959 DEBUG google.api_core.retry Retrying due to , sleeping 0.2s ...
+2023-12-28 15:39:27,474 DEBUG urllib3.connectionpool https://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/data-import-409408/jobs/bf4195e8-bde1-4dc1-ba04-4939d8e025f5?location=US&prettyPrint=false HTTP/1.1" 200 None
+2023-12-28 15:39:27,475 DEBUG google.api_core.retry Retrying due to , sleeping 1.4s ...
+2023-12-28 15:39:29,221 DEBUG urllib3.connectionpool https://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/data-import-409408/jobs/bf4195e8-bde1-4dc1-ba04-4939d8e025f5?location=US&prettyPrint=false HTTP/1.1" 200 None
+2023-12-28 15:39:29,230 DEBUG urllib3.connectionpool Starting new HTTPS connection (1): platform.ironsrc.com:443
+2023-12-28 15:39:29,613 DEBUG urllib3.connectionpool https://platform.ironsrc.com:443 "GET /partners/publisher/auth HTTP/1.1" 200 None
+2023-12-28 15:39:29,618 DEBUG urllib3.connectionpool Starting new HTTPS connection (1): platform.ironsrc.com:443
+2023-12-28 15:39:30,424 DEBUG urllib3.connectionpool https://platform.ironsrc.com:443 "GET /partners/publisher/mediation/applications/v6/stats?startDate=2023-12-01&endDate=2023-12-04&metrics=revenue,impressions,eCPM&breakdown=date,app,adUnit HTTP/1.1" 400 None
+2023-12-28 15:39:30,432 DEBUG bigquery_utils 'data'
+Traceback (most recent call last):
+  File "C:\Users\hungd\Documents\Python Scripts\ironsrc_env\lib\site-packages\pandas\core\indexes\base.py", line 3791, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "index.pyx", line 152, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 181, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'data'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\hungd\Documents\Python Scripts\daily_ironsrc_aggregated\main.py", line 10, in <module>
+    result = get_ironsrc_dataframe(start_date, end_date, report_name)
+  File "C:\Users\hungd\Documents\Python Scripts\daily_ironsrc_aggregated\ironsrc_utils.py", line 64, in get_ironsrc_dataframe
+    result["revenue"] = result["data"].apply(lambda x: list(x)[0]["revenue"])
+  File "C:\Users\hungd\Documents\Python Scripts\ironsrc_env\lib\site-packages\pandas\core\frame.py", line 3893, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "C:\Users\hungd\Documents\Python Scripts\ironsrc_env\lib\site-packages\pandas\core\indexes\base.py", line 3798, in get_loc
+    raise KeyError(key) from err
+KeyError: 'data'
+2023-12-28 17:23:41,204 INFO bigquery_utils App 19b574ff5: Pulled 250 rows from 2023-12-26
+2023-12-28 17:29:38,435 INFO bigquery_utils App 19b574ff5: Pulled 250 rows from 2023-12-26
+2023-12-28 17:29:43,422 INFO bigquery_utils App 19b574ff5: Pulled 84 rows from 2023-12-26
+2023-12-28 17:46:17,505 INFO bigquery_utils App 19b574ff5: Pulled 250 rows from 2023-12-26
+2023-12-28 17:48:16,902 INFO bigquery_utils App 19b574ff5: Pulled 250 rows from 2023-12-26
+2023-12-28 17:52:11,363 INFO bigquery_utils App 19b574ff5: Pulled 250 rows from 2023-12-26
+2023-12-28 17:52:12,131 INFO bigquery_utils Created table data-import-409408.temp_tables.impression_level_revenue
+2023-12-28 17:53:23,502 INFO bigquery_utils App 19b574ff5: Pulled 250 rows from 2023-12-26
+2023-12-28 17:54:41,078 INFO bigquery_utils App 19b574ff5: Pulled 250 rows from 2023-12-26
+2023-12-28 18:03:50,786 INFO bigquery_utils App 19b574ff5: Pulled 250 rows from 2023-12-26
+2023-12-28 18:10:45,297 INFO bigquery_utils App 19b574ff5: Pulled 250 rows from 2023-12-26
+2023-12-28 18:12:55,507 INFO bigquery_utils App 19b574ff5: Pulled 250 rows from 2023-12-26
+2023-12-28 18:12:56,236 INFO bigquery_utils Created table data-import-409408.temp_tables.impression_level_revenue
+2023-12-28 18:16:49,131 INFO bigquery_utils App 19b574ff5: Pulled 250 rows from 2023-12-26
+2023-12-28 18:16:49,895 INFO bigquery_utils Created table data-import-409408.temp_tables.impression_level_revenue
+2023-12-28 18:18:00,879 INFO bigquery_utils App 19b574ff5: Pulled 250 rows from 2023-12-26
+2023-12-28 18:18:01,629 INFO bigquery_utils Created table data-import-409408.temp_tables.impression_level_revenue
+2023-12-28 18:18:08,642 INFO bigquery_utils Table data-import-409408.temp_tables.impression_level_revenue: Imported 250 rows
+2023-12-28 18:18:17,836 INFO bigquery_utils App 19b574ff5: Pulled 84 rows from 2023-12-26
+2023-12-29 13:04:28,679 INFO bigquery_utils Start importing reporting_api data
+2023-12-29 13:04:32,005 INFO bigquery_utils 'reporting_api'
+Traceback (most recent call last):
+  File "C:\Users\hungd\Documents\Python Scripts\daily_ironsrc_aggregated\main.py", line 13, in <module>
+    result = pull_data_reporting_api(start_date, end_date, report)
+  File "C:\Users\hungd\Documents\Python Scripts\daily_ironsrc_aggregated\ironsrc_utils.py", line 60, in pull_data_reporting_api
+    config = ironsrc_api_params[report_name]
+KeyError: 'reporting_api'
+2023-12-29 13:16:54,920 INFO bigquery_utils Start importing reporting_api data
+2023-12-29 13:16:59,642 INFO bigquery_utils 'temp_file'
+Traceback (most recent call last):
+  File "C:\Users\hungd\Documents\Python Scripts\daily_ironsrc_aggregated\main.py", line 15, in <module>
+    result.to_csv(revenue_level_params[report]["temp_file"], index=False)
+KeyError: 'temp_file'
+2023-12-29 13:26:16,598 INFO bigquery_utils Start importing reporting_api data
+2023-12-29 13:26:22,132 INFO bigquery_utils 400 POST https://bigquery.googleapis.com/bigquery/v2/projects/data-import-409408/datasets/temp_tables/tables?prettyPrint=false: Field abTest missing type
+Traceback (most recent call last):
+  File "C:\Users\hungd\Documents\Python Scripts\daily_ironsrc_aggregated\bigquery_utils.py", line 160, in get_or_create_table
+    client.get_table(table_id)
+  File "C:\Users\hungd\Documents\Python Scripts\ironsrc_env\lib\site-packages\google\cloud\bigquery\client.py", line 1034, in get_table
+    api_response = self._call_api(
+  File "C:\Users\hungd\Documents\Python Scripts\ironsrc_env\lib\site-packages\google\cloud\bigquery\client.py", line 782, in _call_api
+    return call()
+  File "C:\Users\hungd\Documents\Python Scripts\ironsrc_env\lib\site-packages\google\api_core\retry.py", line 372, in retry_wrapped_func
+    return retry_target(
+  File "C:\Users\hungd\Documents\Python Scripts\ironsrc_env\lib\site-packages\google\api_core\retry.py", line 207, in retry_target
+    result = target()
+  File "C:\Users\hungd\Documents\Python Scripts\ironsrc_env\lib\site-packages\google\cloud\_http\__init__.py", line 494, in api_request
+    raise exceptions.from_http_response(response)
+google.api_core.exceptions.NotFound: 404 GET https://bigquery.googleapis.com/bigquery/v2/projects/data-import-409408/datasets/temp_tables/tables/reporting_api?prettyPrint=false: Not found: Table data-import-409408:temp_tables.reporting_api
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hungd\Documents\Python Scripts\daily_ironsrc_aggregated\main.py", line 14, in <module>
+    row_imported = import_to_bigquery(
+  File "C:\Users\hungd\Documents\Python Scripts\daily_ironsrc_aggregated\bigquery_utils.py", line 182, in import_to_bigquery
+    get_or_create_table(table_id, report_name)
+  File "C:\Users\hungd\Documents\Python Scripts\daily_ironsrc_aggregated\bigquery_utils.py", line 169, in get_or_create_table
+    table = client.create_table(table)  # Make an API request.
+  File "C:\Users\hungd\Documents\Python Scripts\ironsrc_env\lib\site-packages\google\cloud\bigquery\client.py", line 748, in create_table
+    api_response = self._call_api(
+  File "C:\Users\hungd\Documents\Python Scripts\ironsrc_env\lib\site-packages\google\cloud\bigquery\client.py", line 782, in _call_api
+    return call()
+  File "C:\Users\hungd\Documents\Python Scripts\ironsrc_env\lib\site-packages\google\api_core\retry.py", line 372, in retry_wrapped_func
+    return retry_target(
+  File "C:\Users\hungd\Documents\Python Scripts\ironsrc_env\lib\site-packages\google\api_core\retry.py", line 207, in retry_target
+    result = target()
+  File "C:\Users\hungd\Documents\Python Scripts\ironsrc_env\lib\site-packages\google\cloud\_http\__init__.py", line 494, in api_request
+    raise exceptions.from_http_response(response)
+google.api_core.exceptions.BadRequest: 400 POST https://bigquery.googleapis.com/bigquery/v2/projects/data-import-409408/datasets/temp_tables/tables?prettyPrint=false: Field abTest missing type
+2023-12-29 13:27:38,160 INFO bigquery_utils Start importing reporting_api data
+2023-12-29 13:27:43,377 INFO bigquery_utils Created table data-import-409408.temp_tables.reporting_api
+2023-12-29 13:27:43,700 INFO bigquery_utils 'appKey'
+Traceback (most recent call last):
+  File "C:\Users\hungd\Documents\Python Scripts\ironsrc_env\lib\site-packages\pandas\core\indexes\base.py", line 3791, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "index.pyx", line 152, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 181, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'appKey'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\hungd\Documents\Python Scripts\daily_ironsrc_aggregated\main.py", line 14, in <module>
+    row_imported = import_to_bigquery(
+  File "C:\Users\hungd\Documents\Python Scripts\daily_ironsrc_aggregated\bigquery_utils.py", line 186, in import_to_bigquery
+    app_df = df[df["appKey"] == app]
+  File "C:\Users\hungd\Documents\Python Scripts\ironsrc_env\lib\site-packages\pandas\core\frame.py", line 3893, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "C:\Users\hungd\Documents\Python Scripts\ironsrc_env\lib\site-packages\pandas\core\indexes\base.py", line 3798, in get_loc
+    raise KeyError(key) from err
+KeyError: 'appKey'
+2023-12-29 13:31:45,556 INFO bigquery_utils Start importing reporting_api data
+2023-12-29 13:31:50,972 ERROR bigquery_utils {'code': 400, 'error': 'Invalid breakdowns'}
+2023-12-29 13:37:27,877 INFO bigquery_utils Start importing reporting_api data
+2023-12-29 13:37:32,872 ERROR bigquery_utils {'code': 400, 'error': 'Invalid breakdowns'}
+2023-12-29 13:39:59,216 DEBUG urllib3.connectionpool Starting new HTTPS connection (1): platform.ironsrc.com:443
+2023-12-29 13:40:00,699 DEBUG urllib3.connectionpool https://platform.ironsrc.com:443 "GET /partners/publisher/auth HTTP/1.1" 200 None
+2023-12-29 13:40:00,754 DEBUG urllib3.connectionpool Starting new HTTPS connection (1): platform.ironsrc.com:443
+2023-12-29 13:40:01,508 DEBUG urllib3.connectionpool https://platform.ironsrc.com:443 "GET /partners/publisher/mediation/applications/v6/stats?startDate=2023-12-01&endDate=2023-12-02&metrics=revenue,eCPM,impressions,completions,clicks,clickThroughRate,adSourceChecks,adSourceResponses,adSourceAvailabilityRate,impressionPerEngagedSessions&breakdowns=date,app,platform,country,adSource,adUnits,instance,att,adfa,abTest HTTP/1.1" 400 None
+2023-12-29 13:40:16,937 DEBUG urllib3.connectionpool Starting new HTTPS connection (1): platform.ironsrc.com:443
+2023-12-29 13:40:17,338 DEBUG urllib3.connectionpool https://platform.ironsrc.com:443 "GET /partners/publisher/auth HTTP/1.1" 200 None
+2023-12-29 13:40:17,352 DEBUG urllib3.connectionpool Starting new HTTPS connection (1): platform.ironsrc.com:443
+2023-12-29 13:40:18,111 DEBUG urllib3.connectionpool https://platform.ironsrc.com:443 "GET /partners/publisher/mediation/applications/v6/stats?startDate=2023-12-01&endDate=2023-12-02&metrics=revenue,eCPM,impressions,completions,clicks,clickThroughRate,adSourceChecks,adSourceResponses,adSourceAvailabilityRate,impressionPerEngagedSessions&breakdowns=date,app,platform, HTTP/1.1" 400 None
+2023-12-29 13:42:00,044 DEBUG urllib3.connectionpool Starting new HTTPS connection (1): platform.ironsrc.com:443
+2023-12-29 13:42:00,426 DEBUG urllib3.connectionpool https://platform.ironsrc.com:443 "GET /partners/publisher/auth HTTP/1.1" 200 None
+2023-12-29 13:42:00,434 DEBUG urllib3.connectionpool Starting new HTTPS connection (1): platform.ironsrc.com:443
+2023-12-29 13:42:02,487 DEBUG urllib3.connectionpool https://platform.ironsrc.com:443 "GET /partners/publisher/mediation/applications/v6/stats?startDate=2023-12-01&endDate=2023-12-02&metrics=revenue,eCPM,impressions,completions,clicks,clickThroughRate,adSourceChecks,adSourceResponses,adSourceAvailabilityRate,impressionPerEngagedSessions&breakdowns=adUnits,date HTTP/1.1" 200 None
+2023-12-29 13:43:49,346 DEBUG urllib3.connectionpool Starting new HTTPS connection (1): platform.ironsrc.com:443
+2023-12-29 13:43:49,810 DEBUG urllib3.connectionpool https://platform.ironsrc.com:443 "GET /partners/publisher/auth HTTP/1.1" 200 None
+2023-12-29 13:43:49,813 DEBUG urllib3.connectionpool Starting new HTTPS connection (1): platform.ironsrc.com:443
+2023-12-29 13:43:52,455 DEBUG urllib3.connectionpool https://platform.ironsrc.com:443 "GET /partners/publisher/mediation/applications/v6/stats?startDate=2023-12-01&endDate=2023-12-02&metrics=revenue,eCPM,impressions,completions,clicks,clickThroughRate,adSourceChecks,adSourceResponses,adSourceAvailabilityRate&breakdowns=adUnits,date,app,platform,country HTTP/1.1" 200 None
+2023-12-29 13:44:19,913 DEBUG urllib3.connectionpool Starting new HTTPS connection (1): platform.ironsrc.com:443
+2023-12-29 13:44:20,264 DEBUG urllib3.connectionpool https://platform.ironsrc.com:443 "GET /partners/publisher/auth HTTP/1.1" 200 None
+2023-12-29 13:44:20,270 DEBUG urllib3.connectionpool Starting new HTTPS connection (1): platform.ironsrc.com:443
+2023-12-29 13:44:21,062 DEBUG urllib3.connectionpool https://platform.ironsrc.com:443 "GET /partners/publisher/mediation/applications/v6/stats?startDate=2023-12-01&endDate=2023-12-02&metrics=revenue,eCPM,impressions,completions,clicks,clickThroughRate,adSourceChecks,adSourceResponses,adSourceAvailabilityRate&breakdowns=adUnits,date,app,platform,country,adSource,adUnits,instance,att,adfa,abTest HTTP/1.1" 400 None
+2023-12-29 13:44:27,738 DEBUG urllib3.connectionpool Starting new HTTPS connection (1): platform.ironsrc.com:443
+2023-12-29 13:44:28,060 DEBUG urllib3.connectionpool https://platform.ironsrc.com:443 "GET /partners/publisher/auth HTTP/1.1" 200 None
+2023-12-29 13:44:28,063 DEBUG urllib3.connectionpool Starting new HTTPS connection (1): platform.ironsrc.com:443
+2023-12-29 13:44:31,931 DEBUG urllib3.connectionpool https://platform.ironsrc.com:443 "GET /partners/publisher/mediation/applications/v6/stats?startDate=2023-12-01&endDate=2023-12-02&metrics=revenue,eCPM,impressions,completions,clicks,clickThroughRate,adSourceChecks,adSourceResponses,adSourceAvailabilityRate&breakdowns=adUnits,date,app,platform,country,adSource,adUnits,instance,att,adfa,abTest HTTP/1.1" 400 None
+2023-12-29 13:45:23,713 INFO bigquery_utils Start importing reporting_api data
+2023-12-29 13:45:31,025 INFO bigquery_utils 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/data-import-409408/jobs?uploadType=resumable: Provided Schema does not match Table data-import-409408:temp_tables.reporting_api. Cannot add fields (field: idfa)
+Traceback (most recent call last):
+  File "C:\Users\hungd\Documents\Python Scripts\ironsrc_env\lib\site-packages\google\cloud\bigquery\client.py", line 2447, in load_table_from_file
+    response = self._do_resumable_upload(
+  File "C:\Users\hungd\Documents\Python Scripts\ironsrc_env\lib\site-packages\google\cloud\bigquery\client.py", line 2864, in _do_resumable_upload
+    upload, transport = self._initiate_resumable_upload(
+  File "C:\Users\hungd\Documents\Python Scripts\ironsrc_env\lib\site-packages\google\cloud\bigquery\client.py", line 2937, in _initiate_resumable_upload
+    upload.initiate(
+  File "C:\Users\hungd\Documents\Python Scripts\ironsrc_env\lib\site-packages\google\resumable_media\requests\upload.py", line 420, in initiate
+    return _request_helpers.wait_and_retry(
+  File "C:\Users\hungd\Documents\Python Scripts\ironsrc_env\lib\site-packages\google\resumable_media\requests\_request_helpers.py", line 155, in wait_and_retry
+    response = func()
+  File "C:\Users\hungd\Documents\Python Scripts\ironsrc_env\lib\site-packages\google\resumable_media\requests\upload.py", line 416, in retriable_request
+    self._process_initiate_response(result)
+  File "C:\Users\hungd\Documents\Python Scripts\ironsrc_env\lib\site-packages\google\resumable_media\_upload.py", line 518, in _process_initiate_response
+    _helpers.require_status_code(
+  File "C:\Users\hungd\Documents\Python Scripts\ironsrc_env\lib\site-packages\google\resumable_media\_helpers.py", line 108, in require_status_code
+    raise common.InvalidResponse(
+google.resumable_media.common.InvalidResponse: ('Request failed with status code', 400, 'Expected one of', <HTTPStatus.OK: 200>, <HTTPStatus.CREATED: 201>)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hungd\Documents\Python Scripts\daily_ironsrc_aggregated\main.py", line 14, in <module>
+    row_imported = import_to_bigquery(
+  File "C:\Users\hungd\Documents\Python Scripts\daily_ironsrc_aggregated\bigquery_utils.py", line 193, in import_to_bigquery
+    job = client.load_table_from_file(
+  File "C:\Users\hungd\Documents\Python Scripts\ironsrc_env\lib\site-packages\google\cloud\bigquery\client.py", line 2455, in load_table_from_file
+    raise exceptions.from_http_response(exc.response)
+google.api_core.exceptions.BadRequest: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/data-import-409408/jobs?uploadType=resumable: Provided Schema does not match Table data-import-409408:temp_tables.reporting_api. Cannot add fields (field: idfa)
+2023-12-29 13:52:55,952 DEBUG urllib3.connectionpool Starting new HTTPS connection (1): platform.ironsrc.com:443
+2023-12-29 13:52:57,238 DEBUG urllib3.connectionpool https://platform.ironsrc.com:443 "GET /partners/publisher/auth HTTP/1.1" 200 None
+2023-12-29 13:52:57,242 DEBUG urllib3.connectionpool Starting new HTTPS connection (1): platform.ironsrc.com:443
+2023-12-29 13:53:00,437 DEBUG urllib3.connectionpool https://platform.ironsrc.com:443 "GET /partners/publisher/mediation/applications/v6/stats?startDate=2023-12-01&endDate=2023-12-02&metrics=revenue,eCPM,impressions,completions,clicks,clickThroughRate,adSourceChecks,adSourceResponses,adSourceAvailabilityRate&breakdowns=date,app,platform,country,adSource,adUnits,instance,att,idfa,abTest HTTP/1.1" 200 None
+2023-12-29 14:02:56,991 INFO bigquery_utils Start importing reporting_api data
+2023-12-29 14:03:04,660 INFO bigquery_utils Created table data-import-409408.temp_tables.reporting_api
+2023-12-29 14:03:09,777 INFO bigquery_utils 400 Error while reading data, error message: CSV processing encountered too many errors, giving up. Rows: 0; errors: 64; max bad: 0; error percent: 0
+Traceback (most recent call last):
+  File "C:\Users\hungd\Documents\Python Scripts\daily_ironsrc_aggregated\main.py", line 14, in <module>
+    row_imported = import_to_bigquery(
+  File "C:\Users\hungd\Documents\Python Scripts\daily_ironsrc_aggregated\bigquery_utils.py", line 198, in import_to_bigquery
+    job.result()
+  File "C:\Users\hungd\Documents\Python Scripts\ironsrc_env\lib\site-packages\google\cloud\bigquery\job\base.py", line 728, in result
+    return super(_AsyncJob, self).result(timeout=timeout, **kwargs)
+  File "C:\Users\hungd\Documents\Python Scripts\ironsrc_env\lib\site-packages\google\api_core\future\polling.py", line 261, in result
+    raise self._exception
+google.api_core.exceptions.BadRequest: 400 Error while reading data, error message: CSV processing encountered too many errors, giving up. Rows: 0; errors: 64; max bad: 0; error percent: 0
+2023-12-29 14:45:27,872 INFO bigquery_utils Start importing reporting_api data
+2023-12-29 14:45:32,857 INFO bigquery_utils [Errno 13] Permission denied: '.\\data\\reporting_api.csv'
+Traceback (most recent call last):
+  File "C:\Users\hungd\Documents\Python Scripts\daily_ironsrc_aggregated\main.py", line 13, in <module>
+    result = pull_data_reporting_api(start_date, end_date, report)
+  File "C:\Users\hungd\Documents\Python Scripts\daily_ironsrc_aggregated\ironsrc_utils.py", line 86, in pull_data_reporting_api
+    result.to_csv(revenue_level_params[report_name]["temp_file"], index=False)
+  File "C:\Users\hungd\Documents\Python Scripts\ironsrc_env\lib\site-packages\pandas\core\generic.py", line 3902, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+  File "C:\Users\hungd\Documents\Python Scripts\ironsrc_env\lib\site-packages\pandas\io\formats\format.py", line 1152, in to_csv
+    csv_formatter.save()
+  File "C:\Users\hungd\Documents\Python Scripts\ironsrc_env\lib\site-packages\pandas\io\formats\csvs.py", line 247, in save
+    with get_handle(
+  File "C:\Users\hungd\Documents\Python Scripts\ironsrc_env\lib\site-packages\pandas\io\common.py", line 863, in get_handle
+    handle = open(
+PermissionError: [Errno 13] Permission denied: '.\\data\\reporting_api.csv'
+2023-12-29 14:45:48,104 INFO bigquery_utils Start importing reporting_api data
+2023-12-29 14:45:53,434 INFO bigquery_utils Created table data-import-409408.temp_tables.reporting_api
+2023-12-29 14:45:56,866 INFO bigquery_utils 400 Error while reading data, error message: CSV processing encountered too many errors, giving up. Rows: 64; errors: 64; max bad: 0; error percent: 0
+Traceback (most recent call last):
+  File "C:\Users\hungd\Documents\Python Scripts\daily_ironsrc_aggregated\main.py", line 14, in <module>
+    row_imported = import_to_bigquery(
+  File "C:\Users\hungd\Documents\Python Scripts\daily_ironsrc_aggregated\bigquery_utils.py", line 197, in import_to_bigquery
+    job.result()
+  File "C:\Users\hungd\Documents\Python Scripts\ironsrc_env\lib\site-packages\google\cloud\bigquery\job\base.py", line 728, in result
+    return super(_AsyncJob, self).result(timeout=timeout, **kwargs)
+  File "C:\Users\hungd\Documents\Python Scripts\ironsrc_env\lib\site-packages\google\api_core\future\polling.py", line 261, in result
+    raise self._exception
+google.api_core.exceptions.BadRequest: 400 Error while reading data, error message: CSV processing encountered too many errors, giving up. Rows: 64; errors: 64; max bad: 0; error percent: 0
+2023-12-29 14:51:11,954 INFO bigquery_utils Start importing reporting_api data
+2023-12-29 14:51:37,553 INFO bigquery_utils [Errno 13] Permission denied: '.\\data\\reporting_api.csv'
+Traceback (most recent call last):
+  File "C:\Users\hungd\Documents\Python Scripts\daily_ironsrc_aggregated\main.py", line 13, in <module>
+    result = pull_data_reporting_api(start_date, end_date, report)
+  File "C:\Users\hungd\Documents\Python Scripts\daily_ironsrc_aggregated\ironsrc_utils.py", line 113, in pull_data_reporting_api
+    result.to_csv(revenue_level_params[report_name]["temp_file"], index=False)
+  File "C:\Users\hungd\Documents\Python Scripts\ironsrc_env\lib\site-packages\pandas\core\generic.py", line 3902, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+  File "C:\Users\hungd\Documents\Python Scripts\ironsrc_env\lib\site-packages\pandas\io\formats\format.py", line 1152, in to_csv
+    csv_formatter.save()
+  File "C:\Users\hungd\Documents\Python Scripts\ironsrc_env\lib\site-packages\pandas\io\formats\csvs.py", line 247, in save
+    with get_handle(
+  File "C:\Users\hungd\Documents\Python Scripts\ironsrc_env\lib\site-packages\pandas\io\common.py", line 863, in get_handle
+    handle = open(
+PermissionError: [Errno 13] Permission denied: '.\\data\\reporting_api.csv'
+2023-12-29 14:53:15,817 INFO bigquery_utils Start importing reporting_api data
+2023-12-29 14:53:26,490 INFO bigquery_utils Table data-import-409408.temp_tables.reporting_api: Imported 64 rows
+2023-12-29 14:53:30,678 INFO bigquery_utils Start importing impression_level data
+2023-12-29 14:53:35,629 INFO bigquery_utils App 19b574ff5: Pulled 211 rows from 2023-12-27
+2023-12-29 14:53:36,299 INFO bigquery_utils Created table data-import-409408.temp_tables.impression_level_revenue
+2023-12-29 14:53:41,990 INFO bigquery_utils Table data-import-409408.temp_tables.impression_level_revenue: Imported 211 rows
+2023-12-29 14:53:47,085 INFO bigquery_utils Start importing user_level data
+2023-12-29 14:53:51,842 INFO bigquery_utils [Errno 13] Permission denied: '.\\data\\user_level_revenue.csv'
+Traceback (most recent call last):
+  File "C:\Users\hungd\Documents\Python Scripts\daily_ironsrc_aggregated\main.py", line 23, in <module>
+    result = get_revenue_api_dataframe(report, start_date, app)
+  File "C:\Users\hungd\Documents\Python Scripts\daily_ironsrc_aggregated\ironsrc_utils.py", line 45, in get_revenue_api_dataframe
+    result.to_csv(revenue_level_params[report_name]["temp_file"], index=False)
+  File "C:\Users\hungd\Documents\Python Scripts\ironsrc_env\lib\site-packages\pandas\core\generic.py", line 3902, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+  File "C:\Users\hungd\Documents\Python Scripts\ironsrc_env\lib\site-packages\pandas\io\formats\format.py", line 1152, in to_csv
+    csv_formatter.save()
+  File "C:\Users\hungd\Documents\Python Scripts\ironsrc_env\lib\site-packages\pandas\io\formats\csvs.py", line 247, in save
+    with get_handle(
+  File "C:\Users\hungd\Documents\Python Scripts\ironsrc_env\lib\site-packages\pandas\io\common.py", line 863, in get_handle
+    handle = open(
+PermissionError: [Errno 13] Permission denied: '.\\data\\user_level_revenue.csv'
+2023-12-29 14:55:42,499 INFO bigquery_utils Start importing reporting_api data
+2023-12-29 14:55:45,714 INFO bigquery_utils '>' not supported between instances of 'str' and 'datetime.date'
+Traceback (most recent call last):
+  File "C:\Users\hungd\Documents\Python Scripts\daily_ironsrc_aggregated\main.py", line 13, in <module>
+    result = pull_data_reporting_api(start_date, end_date, report)
+  File "C:\Users\hungd\Documents\Python Scripts\daily_ironsrc_aggregated\ironsrc_utils.py", line 55, in pull_data_reporting_api
+    if start_date > end_date:
+TypeError: '>' not supported between instances of 'str' and 'datetime.date'
+2023-12-29 14:58:04,304 INFO bigquery_utils Start importing reporting_api data
+2023-12-29 14:58:07,170 INFO bigquery_utils 'str' object has no attribute 'strftime'
+Traceback (most recent call last):
+  File "C:\Users\hungd\Documents\Python Scripts\daily_ironsrc_aggregated\main.py", line 10, in <module>
+    start_date, end_date = get_start_end_date(report)
+  File "C:\Users\hungd\Documents\Python Scripts\daily_ironsrc_aggregated\bigquery_utils.py", line 75, in get_start_end_date
+    return start_date.strftime("%Y-%m-%d"), end_date.strftime("%Y-%m-%d")
+AttributeError: 'str' object has no attribute 'strftime'
+2023-12-29 14:59:11,319 INFO bigquery_utils Start importing reporting_api data
+2023-12-29 14:59:14,300 ERROR bigquery_utils ERROR: start_date(2023-12-28) si greater than end_date(2023-12-27)
+2023-12-29 14:59:15,033 INFO bigquery_utils Created table data-import-409408.temp_tables.reporting_api
+2023-12-29 14:59:15,379 INFO bigquery_utils 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "C:\Users\hungd\Documents\Python Scripts\daily_ironsrc_aggregated\main.py", line 14, in <module>
+    row_imported = import_to_bigquery(
+  File "C:\Users\hungd\Documents\Python Scripts\daily_ironsrc_aggregated\bigquery_utils.py", line 193, in import_to_bigquery
+    app_df = df[df["appKey"] == app]
+TypeError: 'NoneType' object is not subscriptable
+2023-12-29 15:00:54,657 INFO bigquery_utils Start importing reporting_api data
+2023-12-29 15:00:57,851 ERROR bigquery_utils ERROR: start_date(2023-12-28) si greater than end_date(2023-12-27)
+2023-12-29 15:04:25,739 INFO bigquery_utils Start importing reporting_api data
+2023-12-29 15:04:30,238 ERROR bigquery_utils {'code': 400, 'error': 'Invalid breakdowns'}
+2023-12-29 15:04:30,239 INFO bigquery_utils ERROR: {'code': 400, 'error': 'Invalid breakdowns'}
+Traceback (most recent call last):
+  File "C:\Users\hungd\Documents\Python Scripts\daily_ironsrc_aggregated\main.py", line 13, in <module>
+    result = pull_data_reporting_api(start_date, end_date, report)
+  File "C:\Users\hungd\Documents\Python Scripts\daily_ironsrc_aggregated\ironsrc_utils.py", line 80, in pull_data_reporting_api
+    raise Exception("ERROR: {}".format(response.json()))
+Exception: ERROR: {'code': 400, 'error': 'Invalid breakdowns'}
+2023-12-29 15:45:56,374 INFO bigquery_utils Start importing reporting_api data
+2023-12-29 15:46:09,548 INFO bigquery_utils Table data-import-409408.temp_tables.reporting_api: Imported 64 rows
+2023-12-29 15:46:13,179 INFO bigquery_utils Start importing impression_level data
+2023-12-29 15:46:18,184 INFO bigquery_utils App 19b574ff5: Pulled 211 rows from 2023-12-27
+2023-12-29 15:46:18,934 INFO bigquery_utils Created table data-import-409408.temp_tables.impression_level_revenue
+2023-12-29 15:46:24,672 INFO bigquery_utils Table data-import-409408.temp_tables.impression_level_revenue: Imported 211 rows
+2023-12-29 15:46:28,860 INFO bigquery_utils Start importing user_level data
+2023-12-29 15:46:33,471 INFO bigquery_utils App 19b574ff5: Pulled 85 rows from 2023-12-27
+2023-12-29 15:46:34,129 INFO bigquery_utils Created table data-import-409408.temp_tables.user_level_revenue
+2023-12-29 15:46:39,314 INFO bigquery_utils Table data-import-409408.temp_tables.user_level_revenue: Imported 85 rows
+2023-12-29 17:22:14,090 INFO bigquery_utils Start importing reporting_api data
+2023-12-29 17:22:24,130 INFO bigquery_utils Created table data-import-409408.temp_tables.reporting_api
+2023-12-29 17:22:29,420 INFO bigquery_utils Table data-import-409408.temp_tables.reporting_api: Imported 219 rows
+2023-12-29 17:22:33,162 INFO bigquery_utils Start importing impression_level data
+2023-12-29 17:22:33,936 INFO bigquery_utils 'urls'
+Traceback (most recent call last):
+  File "C:\Users\hungd\Documents\Python Scripts\daily_ironsrc_aggregated\main.py", line 22, in <module>
+    result = get_revenue_api_dataframe(report, start_date, app)
+  File "C:\Users\hungd\Documents\Python Scripts\daily_ironsrc_aggregated\ironsrc_utils.py", line 39, in get_revenue_api_dataframe
+    for url in response.json()["urls"]:
+KeyError: 'urls'
+2023-12-29 17:24:23,371 INFO bigquery_utils Start importing reporting_api data
+2023-12-29 17:24:31,419 INFO bigquery_utils Table data-import-409408.temp_tables.reporting_api: Imported 219 rows
+2023-12-29 17:24:36,622 INFO bigquery_utils Start importing impression_level data
+2023-12-29 17:24:37,333 ERROR bigquery_utils {'code': 403, 'errorMessage': 'Incorrect Date [2023-12-01] - ARM data is available only for the last 14 days. Make sure you requested date is within this date range.', 'name': 'IllegalActionError', 'params': {}}
+2023-12-29 17:24:37,333 INFO bigquery_utils ERROR: {'code': 403, 'errorMessage': 'Incorrect Date [2023-12-01] - ARM data is available only for the last 14 days. Make sure you requested date is within this date range.', 'name': 'IllegalActionError', 'params': {}}
+Traceback (most recent call last):
+  File "C:\Users\hungd\Documents\Python Scripts\daily_ironsrc_aggregated\main.py", line 22, in <module>
+    result = get_revenue_api_dataframe(report, start_date, app)
+  File "C:\Users\hungd\Documents\Python Scripts\daily_ironsrc_aggregated\ironsrc_utils.py", line 40, in get_revenue_api_dataframe
+    raise Exception("ERROR: {}".format(response.json()))
+Exception: ERROR: {'code': 403, 'errorMessage': 'Incorrect Date [2023-12-01] - ARM data is available only for the last 14 days. Make sure you requested date is within this date range.', 'name': 'IllegalActionError', 'params': {}}
+2023-12-29 17:43:52,957 INFO bigquery_utils Start importing reporting_api data
+2023-12-29 17:44:01,280 INFO bigquery_utils Table data-import-409408.temp_tables.reporting_api: Imported 115 rows
+2023-12-29 17:44:05,454 INFO bigquery_utils Start importing impression_level data
+2023-12-29 17:44:07,756 INFO bigquery_utils App 19b574ff5: Pulled 182 rows from 2023-12-20
+2023-12-29 17:44:08,472 INFO bigquery_utils Created table data-import-409408.temp_tables.impression_level_revenue
+2023-12-29 17:44:14,807 INFO bigquery_utils Table data-import-409408.temp_tables.impression_level_revenue: Imported 182 rows
+2023-12-29 17:44:19,262 INFO bigquery_utils Start importing user_level data
+2023-12-29 17:44:21,489 INFO bigquery_utils App 19b574ff5: Pulled 82 rows from 2023-12-20
+2023-12-29 17:44:22,345 INFO bigquery_utils Created table data-import-409408.temp_tables.user_level_revenue
+2023-12-29 17:44:27,269 INFO bigquery_utils Table data-import-409408.temp_tables.user_level_revenue: Imported 82 rows
