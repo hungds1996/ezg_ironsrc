@@ -27,19 +27,6 @@ revenue_level_params = {
 app_keys_list = ["19b574ff5"]
 
 
-ironsrc_api_params = {
-    "sample_api": {
-        "metrics": "revenue,impressions,eCPM",
-        "breakdown": "date,app",
-        "temp_file": ".\data\sample_api.csv",
-    },
-    "instance_level": {
-        "metrics": "revenue,eCPM,impressions,completions,clicks,clickThroughRate,adSourceChecks,adSourceResponses,adSourceAvailabilityRate,impressionPerEngagedSessions",
-        "breakdown": "date,app,platform,country,adSource,adUnits,instance,att,adfa,abTest",
-        "temp_file": ".\data\ironsrc_instance_data.csv",
-    },
-}
-
 app_info = {
     "19b574ff5": {
         "app_name": "com.nmg.survivalhero",
@@ -51,5 +38,3 @@ app_info = {
 }
 
 import_log_table = "data-import-409408.logs.ironsource_logs"
-
-temp_file = "ironsrc_data.csv"
