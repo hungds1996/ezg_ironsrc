@@ -1,15 +1,12 @@
-# job_name = "Ironsrc daily aggregated data"
-# table_id = "hide-and-seek-97def.OTHERS.import_logs"
-# json_keys = "speedster-hit-682166e75581.json"
-json_keys = "data-import-409408-97adc8924579.json"
+json_keys = "<google cloud console service account>"
 
-secret_key = "71fc9ccb6e36f980b05b24c478c34c8b"
-refresh_token = "12038665dce1f1a2747cfedb9a10d0f4"
+secret_key = "<ironsrc secret key>"
+refresh_token = "<ironsrc refresh token>"
 
 email_config = {
-    "sender": "hungds1996@gmail.com",
-    "password": "pvbm vfld coeq wohw",
-    "receiver": ["hungds1996@gmail.com", "hungds@e-lite.games"],
+    "sender": "<email>",
+    "password": "<app password for email>",
+    "receiver": ["hungds1996@gmail.com"],
 }
 
 revenue_level_params = {
@@ -28,8 +25,8 @@ app_keys_list = ["19b574ff5"]
 
 
 app_info = {
-    "19b574ff5": {
-        "app_name": "com.nmg.survivalhero",
+    "<ironsrc appKey>": {
+        "app_name": "<appname>",
         "reporting_api": "data-import-409408.temp_tables.reporting_api",
         "impression_level": "data-import-409408.temp_tables.impression_level_revenue",
         "user_level": "data-import-409408.temp_tables.user_level_revenue",
