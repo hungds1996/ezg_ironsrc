@@ -81,7 +81,7 @@ def get_start_end_date(report_name):
 
 def get_last_date(report_name, date_column="date"):
     query = "select max({}) last_date from `{}` where report_name='{}'".format(
-        import_log_table, date_column, report_name
+        date_column, import_log_table, report_name
     )
     dataframe = client.query(query).result().to_dataframe()
 
