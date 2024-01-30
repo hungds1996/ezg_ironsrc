@@ -26,6 +26,7 @@ def authenticate():
 
 def get_revenue_api_dataframe(report_name, start_date, end_date, app_key):
     past_14_day = datetime.date.today() - datetime.timedelta(days=13)
+    past_14_day = past_14_day.strftime("%Y-%m-%d")
     start_date = start_date if start_date > past_14_day else past_14_day
 
     date_range = list(pd.date_range(start_date, end_date, freq="d"))
@@ -35,6 +36,7 @@ def get_revenue_api_dataframe(report_name, start_date, end_date, app_key):
     final_result = pd.DataFrame()
 
     for date in date_range:
+        date = date.strftime("%Y-%m-%d")
         url = base_url + "appKey={}&date={}".format(app_key, date)
 
         if report_name == "user_level":
