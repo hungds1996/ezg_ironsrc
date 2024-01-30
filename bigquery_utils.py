@@ -80,8 +80,8 @@ def get_start_end_date(report_name):
 
 
 def get_last_date(report_name, date_column="date"):
-    query = "select max({}) last_date from `data-import-409408.logs.ironsource_logs` where report_name='{}'".format(
-        date_column, report_name
+    query = "select max({}) last_date from `{}` where report_name='{}'".format(
+        import_log_table, date_column, report_name
     )
     dataframe = client.query(query).result().to_dataframe()
 
@@ -114,6 +114,7 @@ def make_job_config(report_name):
             bigquery.SchemaField("date", "DATE"),
             bigquery.SchemaField("import_time", "DATETIME"),
         ]
+
     elif report_name == "user_level":
         schema = [
             bigquery.SchemaField("ad_unit", "STRING"),
@@ -130,6 +131,7 @@ def make_job_config(report_name):
             bigquery.SchemaField("date", "DATE"),
             bigquery.SchemaField("import_time", "DATETIME"),
         ]
+
     else:
         schema = [
             bigquery.SchemaField("date", "DATE"),
@@ -205,6 +207,8 @@ def import_to_bigquery(temp_file, app_name_list, df, report_name):
         row_after = client.get_table(table_id).num_rows
         row_imported = row_after - row_before
 
+        remove_duplicate_rows(report_name, table_id)
+
         logger.info("Table {}: Imported {} rows".format(table_id, row_imported))
         import_logger(app_df["date"].max(), report_name, row_imported)
 
@@ -249,20 +253,57 @@ def import_logger(data_date, report_name, rows_imported):
         job.result()
 
 
-def remove_duplicate_rows(report_name):
+def remove_duplicate_rows(report_name, table_id):
     if report_name == "reporting_api":
         query = """
-            create or replace table `data-import-409408.temp_tables.reporting_api` 
+            create or replace table `{table_id}` 
             partition by date
             as
-            select *
+            select * except(rn)
             from (
             SELECT  
                 *,
-                row_number() over(partition by date, appKey, platform, adUnits, att, idfa, abTest, instanceName, instanceId, bundleId, appName, providerName,countryCode order by import_time desc) as rn
-            FROM `data-import-409408.temp_tables.reporting_api` 
+                row_number() over(partition by date, appKey, platform, adUnits, att, idfa, abTest, instanceName, instanceId, bundleId, appName, providerName, countryCode order by import_time desc) as rn
+            FROM `{table_id}` 
             )
             where rn=1
-        """
+        """.format(
+            table_id=table_id
+        )
+
     elif report_name == "impression_level":
-        pass
+        query = """
+            create or replace table `{table_id}` 
+            partition by date
+            as
+            select * except(rn)
+            from (
+            SELECT  
+                *,
+                row_number() over(partition by event_timestamp,advertising_id, advertising_vendor_id,user_id,ad_unit,ad_network,instance_name,country,placement,segment,AB_Testing,appKey order by import_time desc) as rn
+            FROM `{table_id}` 
+            )
+            where rn=1
+        """.format(
+            table_id=table_id
+        )
+
+    elif report_name == "user_level":
+        query = """
+            create or replace table `{table_id}` 
+            partition by date
+            as
+            select * except(rn)
+            from (
+            SELECT  
+                *,
+                row_number() over(partition by ad_unit,advertising_id,advertising_id_type,user_id,segment,placement,ad_network,AB_Testing,appKey,date order by import_time desc) as rn
+            FROM `{table_id}` 
+            )
+            where rn=1
+        """.format(
+            table_id=table_id
+        )
+
+    query_job = client.query(query)
+    query_job.result()

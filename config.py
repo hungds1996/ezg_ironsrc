@@ -1,4 +1,4 @@
-json_keys = "<google cloud console service account>"
+json_keys = "data-import-409408-97adc8924579.json"
 
 secret_key = "<ironsrc secret key>"
 refresh_token = "<ironsrc refresh token>"

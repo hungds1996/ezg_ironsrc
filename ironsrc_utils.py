@@ -80,44 +80,49 @@ def pull_data_reporting_api(start_date, end_date, report_name):
         authen_response = authenticate()
         response = rq.get(is_url, auth=BearerAuth(authen_response.json()))
 
-        if "code" in response.json():
-            logger.error(response.json())
-            raise Exception("ERROR: {}".format(response.json()))
+        try:
+            result = pd.json_normalize(response.json())
+            result = result.explode("data")
+            result = pd.concat(
+                [result.drop(["data"], axis=1), result["data"].apply(pd.Series)], axis=1
+            )
+            result["import_time"] = datetime.datetime.now().strftime(
+                "%Y-%m-%d %H:%M:%S"
+            )
 
-        result = pd.json_normalize(response.json())
-        result = result.explode("data")
-        result = pd.concat(
-            [result.drop(["data"], axis=1), result["data"].apply(pd.Series)], axis=1
-        )
-        result["import_time"] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-
-        result = result[
-            [
-                "date",
-                "appKey",
-                "platform",
-                "adUnits",
-                "att",
-                "idfa",
-                "abTest",
-                "instanceName",
-                "instanceId",
-                "bundleId",
-                "appName",
-                "providerName",
-                "revenue",
-                "eCPM",
-                "impressions",
-                "videoCompletions",
-                "clicks",
-                "impressionPerEngagedSessions",
-                "adSourceChecks",
-                "adSourceResponses",
-                "adSourceAvailabilityRate",
-                "clickThroughRate",
-                "countryCode",
-                "import_time",
+            result = result[
+                [
+                    "date",
+                    "appKey",
+                    "platform",
+                    "adUnits",
+                    "att",
+                    "idfa",
+                    "abTest",
+                    "instanceName",
+                    "instanceId",
+                    "bundleId",
+                    "appName",
+                    "providerName",
+                    "revenue",
+                    "eCPM",
+                    "impressions",
+                    "videoCompletions",
+                    "clicks",
+                    "impressionPerEngagedSessions",
+                    "adSourceChecks",
+                    "adSourceResponses",
+                    "adSourceAvailabilityRate",
+                    "clickThroughRate",
+                    "countryCode",
+                    "import_time",
+                ]
             ]
-        ]
-        result.to_csv(revenue_level_params[report_name]["temp_file"], index=False)
-        return result
+            result.to_csv(revenue_level_params[report_name]["temp_file"], index=False)
+            return result
+        except Exception as e:
+            raise Exception(
+                "API Request response error {} with message: {}".format(
+                    response.status_code, response.reason
+                )
+            )

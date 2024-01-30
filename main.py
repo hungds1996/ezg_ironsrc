@@ -27,7 +27,6 @@ if __name__ == "__main__":
                         df=result,
                         report_name=report,
                     )
-            # remove_duplicate_rows(report)
 
     except Exception as e:
         logger.info(e, exc_info=True)
