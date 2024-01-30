@@ -24,36 +24,43 @@ def authenticate():
     return response
 
 
-def get_revenue_api_dataframe(report_name, start_date, app_key):
+def get_revenue_api_dataframe(report_name, start_date, end_date, app_key):
+    past_14_day = datetime.date.today() - datetime.timedelta(days=13)
+    start_date = start_date if start_date > past_14_day else past_14_day
+
+    date_range = list(pd.date_range(start_date, end_date, freq="d"))
+
     base_url = revenue_level_params[report_name]["base_url"]
 
-    url = base_url + "appKey={}&date={}".format(app_key, start_date)
+    final_result = pd.DataFrame()
 
-    if report_name == "user_level":
-        url = url + "&reportType=1"
+    for date in date_range:
+        url = base_url + "appKey={}&date={}".format(app_key, date)
 
-    authen_response = authenticate()
-    response = rq.get(url, auth=BearerAuth(authen_response.json()))
+        if report_name == "user_level":
+            url = url + "&reportType=1"
 
-    if "code" in response.json():
-        logger.error(response.json())
-        raise Exception("ERROR: {}".format(response.json()))
+        authen_response = authenticate()
+        response = rq.get(url, auth=BearerAuth(authen_response.json()))
 
-    result = pd.DataFrame()
-    for url in response.json()["urls"]:
-        url_result = pd.read_csv(url, compression="gzip")
-        result = pd.concat([result, url_result], ignore_index=True)
-    result["appKey"] = app_key
-    result["date"] = start_date
-    result["import_time"] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        if "code" in response.json():
+            logger.error(response.json())
+            raise Exception("ERROR: {}".format(response.json()))
 
-    result.to_csv(revenue_level_params[report_name]["temp_file"], index=False)
+        result = pd.DataFrame()
+        for url in response.json()["urls"]:
+            url_result = pd.read_csv(url, compression="gzip")
+            result = pd.concat([result, url_result], ignore_index=True)
+        result["appKey"] = app_key
+        result["date"] = date
+        result["import_time"] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        final_result = pd.concat([final_result, result])
 
-    logger.info(
-        "App {}: Pulled {} rows from {}".format(app_key, len(result), start_date)
-    )
+        logger.info("App {}: Pulled {} rows from {}".format(app_key, len(result), date))
 
-    return result
+    final_result.to_csv(revenue_level_params[report_name]["temp_file"], index=False)
+
+    return final_result
 
 
 def pull_data_reporting_api(start_date, end_date, report_name):

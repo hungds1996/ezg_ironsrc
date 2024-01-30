@@ -19,7 +19,9 @@ if __name__ == "__main__":
                 )
             else:
                 for app in app_keys_list:
-                    result = get_revenue_api_dataframe(report, start_date, app)
+                    result = get_revenue_api_dataframe(
+                        report, start_date, end_date, app
+                    )
 
                     row_imported = import_to_bigquery(
                         temp_file=revenue_level_params[report]["temp_file"],
